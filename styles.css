@@ -1,0 +1,213 @@
+/* Light & Dark Mode Styles */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --header-bg: #333;
+    --header-text: white;
+    --button-bg: #007BFF;
+    --button-hover-bg: #0056b3;
+    --section-bg: white;
+    --li-bg: #ddd;
+    --skill-bg: #007BFF;
+    --nav-bg-light: #333;  /* Default header bg in light mode */
+    --nav-text-light: white; /* Default text color in light mode */
+    --button-bg-light: #007BFF;  /* Default button color in light mode */
+}
+
+.dark-mode {
+    --bg-color: #1e1e1e;
+    --text-color: #f4f4f4;
+    --header-bg: #ffffff;  /* Nav bar background becomes white in dark mode */
+    --header-text: #242323;  /* Text color changes to #242323 in dark mode */
+    --button-bg: #242323;  /* Button color in dark mode is #242323 */
+    --button-hover-bg: #0056b3;  /* Button hover color in dark mode */
+    --button-text-color: white; /* Button text color in dark mode */
+    --section-bg: #2c2c2c;
+    --li-bg: #444;
+    --skill-bg: #ffcc00;
+    --nav-text-dark: #242323;  /* Nav text color in dark mode */
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h2 {
+    color: var(--text-color);
+}
+
+/* Header */
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Section Styling */
+section {
+    margin: 20px;
+    padding: 20px;
+    background: var(--section-bg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Skills Section */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill {
+    padding: 10px;
+    background: var(--skill-bg);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+/* Skill Descriptions */
+.skill-description {
+    display: none;  /* Hide descriptions initially */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--section-bg);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Skill Description */
+.skill-description p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.skill-description p.active {
+    display: block;  /* Make the clicked skill description visible */
+}
+
+.skill:hover {
+    transform: scale(1.1);
+}
+
+.skill.highlight {
+    background-color: #ffcc00; /* Highlighted skill color */
+}
+
+/* New Section for References */
+#references {
+    background-color: var(--section-bg);
+    margin-top: 40px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.references-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reference {
+    background-color: var(--li-bg);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.reference:hover {
+    transform: scale(1.05);
+}
+
+.reference h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.reference p {
+    color: var(--text-color);
+}
+
+.reference a {
+    color: var(--button-bg);
+    text-decoration: none;
+}
+
+.reference a:hover {
+    text-decoration: underline;
+}
+
+/* List Items */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: var(--li-bg);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 10px;
+}
+
+/* Contact Section Visibility */
+#contact.hidden {
+    display: none;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
